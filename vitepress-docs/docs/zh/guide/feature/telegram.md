@@ -1,5 +1,7 @@
 # 配置 Telegram Bot
 
+试用地址：[@cf_temp_mail_bot](https://t.me/cf_temp_mail_bot)
+
 ::: warning 注意
 worker 默认的 `worker.dev` 域名的证书是不被 telegram 支持的，配置 Telegram Bot 请使用自定义域名
 :::
@@ -8,6 +10,8 @@ worker 默认的 `worker.dev` 域名的证书是不被 telegram 支持的，配�
 > 如果要使用 Telegram Bot, 请先绑定 `KV`
 >
 > 如果不需要 Telegram Bot, 可跳过此步骤
+>
+> 如果你想 Telegram 的解析邮件能力更强，参考 [配置 worker 使用 wasm 解析邮件](/zh/guide/feature/mail_parser_wasm_worker)
 
 ## Telegram Bot 配置
 
@@ -57,8 +61,6 @@ cp .env.example .env.prod
 pnpm run deploy:telegram --project-name=<你的项目名称>
 ```
 
-部署完成后，请在 admin 后台的 `设置` -> `电报小程序` 页面 `电报小程序 URL`。
-
-请在 `@BotFather` 处执行 `/setmenubutton`，然后输入你的网页地址，设置左下角的 `Open App` 按钮。
-
-你也可以在 `@BotFather` 处执行 `/newapp` 新建 app 来获得 mini app 的链接
+- 部署完成后，请在 admin 后台的 `设置` -> `电报小程序` 页面 `电报小程序 URL` 中填写网页 URL。
+- 请在 `@BotFather` 处执行 `/setmenubutton`，然后输入你的网页地址，设置左下角的 `Open App` 按钮。
+- 请在 `@BotFather` 处执行 `/newapp` 新建 app 来注册 mini app。
